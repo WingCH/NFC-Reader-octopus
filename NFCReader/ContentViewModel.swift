@@ -16,11 +16,13 @@ class ContentViewModel: NSObject, ObservableObject {
     
     override init() {
         super.init()
-        self.reader = OctopusReader(delegate: self)
+        // TRETJapanNFCReader have some presets languages
         kJapanNFCReaderLocalizedLanguage = .zhHK
+        
+        self.reader = OctopusReader(delegate: self)
     }
     
-    func scan(){
+    func scan() {
         print("onclick")
         self.reader?.get(itemTypes: OctopusCardItemType.allCases)
     }
