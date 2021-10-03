@@ -1,6 +1,0 @@
-framework module TRETJapanNFCReader {
-  umbrella header "TRETJapanNFCReader-umbrella.h"
-
-  export *
-  module * { export * }
-}
