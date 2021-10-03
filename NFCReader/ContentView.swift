@@ -8,9 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var vm: ContentViewModel = ContentViewModel()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            
+            GroupBox(label: Label("Balance", systemImage: "creditcard.fill")) {
+                HStack {
+                    Text(vm.balance ?? "HK$----")
+                        .font(.system(.largeTitle, design: .rounded))
+                        .fontWeight(.bold)
+                    Spacer()
+                }
+            }.padding()
+            
+            
+            Button(action: vm.scan) {
+                Text("Scan card")
+            }
+            .tint(.green)
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.capsule)
+            .controlSize(.large)
+            
+            
+            
+        }
     }
 }
 
