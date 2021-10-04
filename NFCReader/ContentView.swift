@@ -11,7 +11,6 @@ struct ContentView: View {
     @StateObject private var vm: ContentViewModel = ContentViewModel()
     var body: some View {
         VStack {
-            
             GroupBox(label: Label("Balance", systemImage: "creditcard.fill")) {
                 HStack {
                     Text(vm.balance ?? "HK$----")
@@ -21,7 +20,6 @@ struct ContentView: View {
                 }
             }.padding()
             
-            
             Button(action: vm.scan) {
                 Text("Scan card")
             }
@@ -29,9 +27,6 @@ struct ContentView: View {
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)
             .controlSize(.large)
-            
-            
-            
         }
     }
 }
